@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SARS - Committed to make your life easy</title>
+    <style>
+        body {
+            background-color: #E0E2EE;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #3C6D79;
+        }
+
+        .topnav a {
+            float: left;
+            color: #ddd;
+            text-align: center;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #E0E2EE;
+            color: Blue;
+        }
+
+        .topnav a.active {
+            background-color: #F9AE65;
+            color: Gray;
+        }
+
+        .topnav-right {
+            float: right;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .img-container {
+            width: 60%;
+            height: 500px; /* Fixed height for the image */
+            overflow: hidden; /* Hide the overflow if the content exceeds */
+        }
+
+        .faq-container {
+            width: 35%;
+            padding: 20px;
+            background-color: #F9AE65;
+            border-radius: 10px;
+            overflow-y: auto; /* Allow scrolling if FAQ section is too long */
+            max-height: 500px; /* Fixed height for the FAQ section */
+        }
+
+        .faq-container h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .faq-item:hover {
+            background-color: #E0E2EE;
+        }
+
+        .answer {
+            display: none;
+            padding-top: 10px;
+            background-color: #E0E2EE;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #no-results {
+            display: none;
+            color: red;
+            text-align: center;
+        }
+
+        /* Style for the blinking text */
+        .blinking-text {
+            text-align: center;
+            margin-top: 0;
+            font-size: 30px;
+            color: red;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <img src="logo.png" alt="Company Logo" width="100" height="90">
+        <div class="topnav-right">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a class="active" href="faq.html">FAQ</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="img-container">
+            <img src="about.jpeg" alt="About SARS" style="width: 100%; height: 100%;">
+        </div>
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+
+            <!-- FAQ Items -->
+            <div class="faq-item" onclick="toggleAnswer('step')">What is the first step in creating a website?</div>
+            <div id="step" class="answer">The first step is to define your website's purpose and objectives. This includes deciding whether it will be for an online store, blog, portfolio, or business services.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('hire')">Do I need to hire a web developer?</div>
+            <div id="hire" class="answer">It depends on your website’s complexity. For simple websites, you may use website builders like WordPress or Wix. For complex sites, hiring a web developer can be beneficial.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('domain')">What is a domain name?</div>
+            <div id="domain" class="answer">A domain name is your website’s address on the internet (e.g., www.example.com).</div>
+
+            <div class="faq-item" onclick="toggleAnswer('choose')">How do I choose a domain name?</div>
+            <div id="choose" class="answer">Choose a domain name that is short, easy to spell, and relevant to your business.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('webhosting')">What is web hosting?</div>
+            <div id="webhosting" class="answer">Web hosting is a service that stores your website files on a server and makes them accessible to visitors online.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('builder')">Can I use a free website builder?</div>
+            <div id="builder" class="answer">Yes, many website builders like Wix, WordPress, and Weebly offer free plans, but they come with limitations like ads or restricted functionality.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('cost')">How much does it cost to build a website?</div>
+            <div id="cost" class="answer">The cost can range from $500 for a basic website to $10,000 or more for a complex website with custom features.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('cms')">What is a content management system (CMS)?</div>
+            <div id="cms" class="answer">A CMS like WordPress allows you to easily manage and update website content without technical knowledge.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('difference')">What is the difference between a website and a web app?</div>
+            <div id="difference" class="answer">A website provides information, while a web app is interactive and allows users to perform tasks (like an online store or a banking app).</div>
+
+            <div class="faq-item" onclick="toggleAnswer('responsive')">What is responsive web design?</div>
+            <div id="responsive" class="answer">Responsive web design ensures your website looks good and functions properly on all devices, including desktops, tablets, and smartphones.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('time')">How long does it take to build a website?</div>
+            <div id="time" class="answer">It typically takes 2 to 6 weeks depending on the complexity and size of your website.</div>
+
+            <div class="faq-item" onclick="toggleAnswer('features')">What features should my website have?</div>
+            <div id="features" class="answer">Features depend on your goals, but common features include a homepage, contact form, navigation, blog, and e-commerce functionality.</div>
+
+        </div>
+    </div>
+
+    <div class="blinking-text">
+        Don't get left behind! Over 70% of businesses are online. Get your website up and running for only Rs. 999! #website #business #digitalmarketing #sale
+    </div>
+
+    <script type="text/javascript">
+        // Function to toggle the display of the answer
+        function toggleAnswer(questionId) {
+            var answerElement = document.getElementById(questionId);
+            // Toggle answer visibility
+            if (answerElement.style.display === "block") {
+                answerElement.style.display = "none";
+            } else {
+                answerElement.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
