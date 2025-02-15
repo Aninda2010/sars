@@ -146,14 +146,14 @@
       /* Mobile devices (below 600px) */
       @media screen and (max-width: 600px) {
         .topnav a {
-          display: block;
+          display: none;  /* Hide menu links by default */
           width: 100%;
           text-align: left;
           padding: 10px 20px;
         }
 
         .topnav-right {
-          display: none;
+          display: none;  /* Hide the navigation links initially */
           width: 100%;
         }
 
@@ -162,11 +162,11 @@
         }
 
         .topnav.active .topnav-right {
-          display: block;
+          display: block;  /* Show the navigation links when active */
         }
 
         .topnav.active a {
-          display: block;
+          display: block;  /* Display each link block in mobile view */
           padding: 10px 20px;
         }
       }
