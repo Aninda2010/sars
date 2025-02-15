@@ -146,9 +146,10 @@
       /* Mobile devices (below 600px) */
       @media screen and (max-width: 600px) {
         .topnav a {
-          display: none;
+          display: block;
           width: 100%;
           text-align: left;
+          padding: 10px 20px;
         }
 
         .topnav-right {
@@ -161,9 +162,7 @@
         }
 
         .topnav.active .topnav-right {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
+          display: block;
         }
 
         .topnav.active a {
