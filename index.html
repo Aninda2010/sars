@@ -71,6 +71,24 @@
         justify-content: flex-end;
       }
 
+      /* Hamburger menu for small screens */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 30px;
+        height: 3px;
+        background-color: #ddd;
+        margin: 5px 0;
+      }
+
+      .menu {
+        display: flex;
+      }
+
       /* Flex layout for image and text in container */
       .first {
         display: flex;
@@ -109,18 +127,34 @@
           left: 50%;
           transform: translateX(-50%);
         }
-      }
 
-      @media screen and (min-width: 768px) {
-        .topnav {
-          flex-direction: row;
+        .hamburger {
+          display: none;
+        }
+
+        .topnav .topnav-right {
+          display: flex;
         }
       }
 
-      /* For large screens like desktops */
-      @media screen and (min-width: 1024px) {
+      /* Mobile devices (below 600px) */
+      @media screen and (max-width: 600px) {
         .topnav a {
-          padding: 15px 30px;
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .topnav.active a {
+          display: block;
+          padding: 10px 20px;
+        }
+
+        .topnav.active .topnav-right {
+          display: block;
+          width: 100%;
         }
       }
 
@@ -148,12 +182,17 @@
   </head>
 
   <body>
-    <div class="topnav">
+    <div class="topnav" id="navbar">
       <img src="logo.png" alt="Company Logo">
       <div class="topnav-right">
         <a class="active" href="index.html">Home</a>
         <a href="contact.html">Contact</a>
         <a href="faq.html">FAQ</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
 
@@ -190,5 +229,12 @@
     <div class="blinking-text">
       Don't get left behind! Over 70% of businesses are online. Get your website up and running for only Rs. 999! #website #business #digitalmarketing #sale
     </div>
+
+    <script>
+      function toggleMenu() {
+        var navbar = document.getElementById('navbar');
+        navbar.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
